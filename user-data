@@ -1,0 +1,15 @@
+#cloud-config
+
+# upgrade packages on startup
+package_upgrade: true
+
+# install git
+packages:
+  - git
+
+password: xdr56yhnb
+ssh_pwauth: True
+chpasswd: { expire: False }
+
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAkuglTT9z6rVe1OYQKmKs2wGszXlIfDL1i+dUSCPnD0umkR1PM+Qki7fDWw99YZeTYqWBZSTub0VH4AOOmfZR6ODzisa1siZ6yTEuJSE1AVuY4lC7uYtvRqy8Ez7SDRJgaJ3ZdsI2h+a0h0QsE4Y1vbVmH9TvLq7dQkDlm6GhOXM= rsa-key-20080613
