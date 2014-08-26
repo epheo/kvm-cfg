@@ -1,9 +1,15 @@
+#!/bin/bash
+
+# libvirt appears to be the cleanest abstraction of KVM/QEMU, Xen, LXC, and
+# others
+
 sudo apt-get install -y libvirt-bin
 
-mkdir KVMcfg && cd KVMcfg
 curl -LO http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
 
 sudo cp trusty-server-cloudimg-amd64-disk1.img /var/lib/libvirt/images/
+
+# tell libvirt to re-scan for new files
 virsh pool-refresh default
 
 cat <<EOF | sudo tee -a /etc/network/interfaces
