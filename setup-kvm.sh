@@ -3,7 +3,7 @@
 # libvirt appears to be the cleanest abstraction of KVM/QEMU, Xen, LXC, and
 # others
 
-sudo apt-get install -y libvirt-bin
+sudo apt-get install qemu-kvm libvirt-bin bridge-utils
 
 curl -LO http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
 
@@ -35,7 +35,7 @@ package_upgrade: true
 packages:
   - git
 
-password: ubuntu
+password:ubuntu
 ssh_pwauth: True
 chpasswd: { expire: False }
 
